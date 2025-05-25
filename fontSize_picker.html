@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Text Style Changer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    label {
+      display: inline-block;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+
+    input[type="number"], select {
+      padding: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 7px 15px;
+      margin-top: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #manteadsText {
+      margin-top: 30px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="fontSize">Font Size:</label>
+  <input type="number" id="fontSize" value="16" min="10" max="40"> px
+
+  <label for="fontFamily">Font Family:</label>
+  <select id="fontFamily">
+    <option value="Arial">Arial</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Verdana">Verdana</option>
+    <option value="Times New Roman">Times New Roman</option>
+  </select>
+
+  <button onclick="applyTextStyle()">Apply Style</button>
+
+  <div id="manteadsText">
+    <p>This is a sample paragraph. Change the font size and family to see the effect.</p>
+  </div>
+
+  <script>
+    function applyTextStyle() {
+      const fontSize = document.getElementById('fontSize').value + 'px';
+      const fontFamily = document.getElementById('fontFamily').value;
+      const textDiv = document.getElementById('manteadsText');
+      textDiv.style.fontSize = fontSize;
+      textDiv.style.fontFamily = fontFamily;
+    }
+  </script>
+
+</body>
+</html>
